@@ -9,6 +9,7 @@ $resultados = $stmt->fetchAll();
 ?>
 
 <h2>Resultados de la Carrera</h2>
+<a href="generar_pdf.php" class="btn-descargar-pdf">Descargar PDF</a>
 <table>
     <thead>
         <tr>
@@ -31,7 +32,7 @@ $resultados = $stmt->fetchAll();
             <td><?= htmlspecialchars($row['hora_salida']) ?></td>
             <td><?= htmlspecialchars($row['hora_paso']) ?></td>
             <td><?= htmlspecialchars($row['tiempo_vuelta']) ?></td>
-            <td><?= htmlspecialchars($row['velocidad']) ?></td>
+            <td><?= htmlspecialchars(number_format($row['velocidad'], 2)) ?></td>
             <td><?= htmlspecialchars($row['tiempo_acumulado']) ?></td>
         </tr>
         <?php endforeach; ?>
